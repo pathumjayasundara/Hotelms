@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Serendib Grand Hotel</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder" data-base="../"></div>
+
+  <div class="contact-wrap">
+
+    <!-- HERO -->
+    <div class="contact-hero">
+      <span class="contact-hero-tag">We're Here For You</span>
+      <h1 class="contact-hero-title">Get in<br><em>Touch</em></h1>
+      <p class="contact-hero-sub">
+        Our dedicated team is available around the clock to assist with reservations,
+        enquiries, and anything that makes your stay exceptional.
+      </p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="contact-main">
+
+      <!-- Info -->
+      <div>
+        <div class="contact-info-card">
+          <h2 class="contact-info-title">Contact Information</h2>
+          <p class="contact-info-sub">Reach us any time. Our concierge team never sleeps.</p>
+
+          <div class="contact-detail">
+            <div class="detail-icon">📍</div>
+            <div>
+              <div class="detail-label">Address</div>
+              <div class="detail-value">No. 1 De Silva Road, Bentota,<br>Southern Province, Sri Lanka</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="detail-icon">📞</div>
+            <div>
+              <div class="detail-label">Telephone</div>
+              <div class="detail-value">+94 34 227 5435</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="detail-icon">✉️</div>
+            <div>
+              <div class="detail-label">Email</div>
+              <div class="detail-value">info@serendibgrand.lk</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="detail-icon">🚗</div>
+            <div>
+              <div class="detail-label">From Colombo</div>
+              <div class="detail-value">~90 minutes via Southern Expressway</div>
+            </div>
+          </div>
+
+          <div class="contact-hours">
+            <div class="hours-title">Reception Hours</div>
+            <div class="hours-row"><span>Mon – Fri</span><span>24 Hours</span></div>
+            <div class="hours-row"><span>Sat – Sun</span><span>24 Hours</span></div>
+            <div class="hours-row"><span>Concierge</span><span>Always Available</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <div id="formContent">
+          <h2 class="form-title">Send a Message</h2>
+          <p class="form-sub">We respond to all enquiries within 2 hours.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name</label>
+              <input class="form-input" id="fname" type="text" placeholder="Arjun" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name</label>
+              <input class="form-input" id="lname" type="text" placeholder="Perera" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" id="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone</label>
+              <input class="form-input" id="phone" type="tel" placeholder="+94 77 000 0000" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <select class="form-select" id="subject">
+              <option value="" disabled selected>Select a topic…</option>
+              <option>Room Reservation</option>
+              <option>Spa & Wellness</option>
+              <option>Dining Reservations</option>
+              <option>Events & Weddings</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="msg">Message</label>
+            <textarea class="form-textarea" id="msg" placeholder="Tell us how we can help…"></textarea>
+          </div>
+
+          <button class="form-submit" onclick="submitForm()">Send Message ✦</button>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <span class="success-icon">✅</span>
+          <div class="success-title">Message Received</div>
+          <p class="success-sub">Thank you for reaching out to Serendib Grand.<br>Our team will reply within 2 hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAP placeholder -->
+    <div class="map-section">
+      <div class="map-box">
+        <span>🗺️</span>
+        <p>No. 1 De Silva Road, Bentota, Sri Lanka — Google Maps Embed Here</p>
+      </div>
+    </div>
+
+  </div><!-- /contact-wrap -->
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    function submitForm() {
+      const fields = ['fname','lname','email','subject'];
+      const missing = fields.some(id => !document.getElementById(id).value.trim());
+      if (missing) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }
+  </script>
+</body>
+</html>

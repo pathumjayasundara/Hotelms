@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Serendib Grand Hotel</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/about.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder" data-base="../"></div>
+
+  <!-- HERO with background image -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <span class="page-hero-tag">Our Story</span>
+    <h1 class="page-hero-title">
+      A Legacy of<br><em>Timeless Grace</em>
+    </h1>
+    <p class="page-hero-sub">
+      For over two decades, Serendib Grand has been Sri Lanka's most celebrated
+      beachfront sanctuary — where every detail is a love letter to the island.
+    </p>
+  </div>
+
+  <!-- STORY SECTION with real hotel image -->
+  <div class="about-story">
+    <div class="story-visual">
+      <img class="story-img" src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Serendib Grand Hotel heritage building">
+      <div class="story-year">1999</div>
+    </div>
+    <div class="story-content">
+      <span class="story-tag">Founded in Bentota</span>
+      <h2 class="story-title">Where Luxury Was Born on the Shore</h2>
+      <p class="story-text">
+        In 1999, visionary hotelier Ranjith De Silva purchased a stretch of pristine Bentota
+        coastline with a single purpose: to craft a resort that honoured Sri Lankan heritage
+        while embracing the finest global hospitality traditions.
+      </p>
+      <p class="story-text">
+        What began as a boutique property of 40 rooms has grown into a 150-room landmark —
+        twice recognised by Condé Nast Traveller as one of Asia's top resorts. Yet the soul
+        of that original vision remains unchanged: to offer every guest an experience that
+        feels both magnificent and genuinely personal.
+      </p>
+      <p class="story-text">
+        Today, under the stewardship of the second generation of the De Silva family,
+        Serendib Grand continues to set the benchmark for luxury hospitality in the Indian
+        Ocean region.
+      </p>
+    </div>
+  </div>
+
+  <!-- VALUES SECTION with relevant images -->
+  <div class="values-section">
+    <div class="values-inner">
+      <span class="section-tag">Our Philosophy</span>
+      <h2 class="section-title">What We Stand For</h2>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <img class="value-img" src="/images/sus.png" alt="Sustainability - green energy and nature">
+          <h3 class="value-title">Sustainability</h3>
+          <p class="value-desc">
+            We are committed to carbon neutrality by 2030 through solar energy,
+            ocean-friendly practices, and supporting local communities.
+          </p>
+        </div>
+        <div class="value-card">
+          <img class="value-img" src="/images/auth.png">
+          <h3 class="value-title">Authenticity</h3>
+          <p class="value-desc">
+            Every element — from our cuisine to our architecture — draws from
+            the deep cultural richness of Sri Lanka.
+          </p>
+        </div>
+        <div class="value-card">
+          <img class="value-img" src="/images/excellence.jfif">
+          <h3 class="value-title">Excellence</h3>
+          <p class="value-desc">
+            We pursue perfection in every detail, from the thread count of our
+            linens to the temperature of our morning brew.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM SECTION with professional portraits -->
+  <div class="team-section">
+    <span class="section-tag">Leadership</span>
+    <h2 class="section-title">The Faces Behind the Magic</h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <img class="team-avatar-img" src="/images/gm.png" alt="Arjuna De Silva">
+        <div class="team-name">Arjuna De Silva</div>
+        <div class="team-role">General Manager</div>
+      </div>
+      <div class="team-card">
+        <img class="team-avatar-img" src="/images/chef.png" alt="Nimesha Perera">
+        <div class="team-name">Nimesha Perera</div>
+        <div class="team-role">Executive Chef</div>
+      </div>
+      <div class="team-card">
+        <img class="team-avatar-img" src="/images/Gemini_Generated_Image_sg0mofsg0mofsg0m.png" alt="Dilani Jayawardena">
+        <div class="team-name">Dilani Jayawardena</div>
+        <div class="team-role">Head of Wellness</div>
+      </div>
+      <div class="team-card">
+        <img class="team-avatar-img" src="/images/creativrd.png" alt="Kasun Wijeratne">
+        <div class="team-name">Kasun Wijeratne</div>
+        <div class="team-role">Creative Director</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div class="about-cta">
+    <div class="about-cta-inner">
+      <h3 class="about-cta-title">Experience Our Legacy</h3>
+      <p class="about-cta-text">Book your stay and become part of the Serendib story.</p>
+      <a href="../pages/contact.html" class="about-cta-btn">Reserve Your Journey</a>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    // Scroll reveal for about page
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.value-card, .team-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
