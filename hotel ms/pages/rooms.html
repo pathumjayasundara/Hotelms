@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooms & Suites — Serendib Grand Hotel</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/rooms.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder" data-base="../"></div>
+
+  <!-- HERO -->
+  <div class="page-hero rooms-hero">
+    <span class="page-hero-tag">Accommodations</span>
+    <h1 class="page-hero-title">Rooms &amp;<br><em>Suites</em></h1>
+    <p class="page-hero-sub">
+      Six distinct sanctuaries, each a masterpiece of design blending traditional
+      Sri Lankan artistry with contemporary refinement.
+    </p>
+  </div>
+
+  <!-- SEARCH & FILTER UI -->
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <div class="search-field">
+        <span class="search-icon">📅</span>
+        <div>
+          <label class="search-label">Check-In</label>
+          <input type="date" class="search-input" id="checkin" />
+        </div>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <span class="search-icon">📅</span>
+        <div>
+          <label class="search-label">Check-Out</label>
+          <input type="date" class="search-input" id="checkout" />
+        </div>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <span class="search-icon">👥</span>
+        <div>
+          <label class="search-label">Guests</label>
+          <select class="search-input" id="guests">
+            <option>1 Guest</option>
+            <option selected>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+            <option>5+ Guests</option>
+          </select>
+        </div>
+      </div>
+      <button class="search-btn" onclick="filterRooms()">Check Availability</button>
+    </div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-wrap">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter(this,'all')">All Rooms</button>
+      <button class="filter-btn" data-filter="deluxe" onclick="setFilter(this,'deluxe')">Deluxe</button>
+      <button class="filter-btn" data-filter="suite" onclick="setFilter(this,'suite')">Suites</button>
+      <button class="filter-btn" data-filter="villa" onclick="setFilter(this,'villa')">Villas</button>
+      <button class="filter-btn" data-filter="penthouse" onclick="setFilter(this,'penthouse')">Penthouse</button>
+    </div>
+    <div class="sort-wrap">
+      <label class="search-label">Sort by:</label>
+      <select class="sort-select" onchange="sortRooms(this.value)">
+        <option value="default">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ROOMS GRID -->
+  <div class="rooms-section">
+    <div class="rooms-grid-full" id="roomsGrid">
+
+      <!-- Room 1 -->
+      <div class="room-card-full" data-category="deluxe" data-price="240">
+        <div class="rcf-img" style="position:relative; overflow:hidden;">
+          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sunrise Deluxe Room" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+          <span class="rcf-badge">Best Value</span>
+          <div class="rcf-overlay">
+            <a href="room-details.html?room=1" class="rcf-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="rcf-info">
+          <div class="rcf-meta">
+            <span class="rcf-type">Deluxe Room</span>
+            <div class="rcf-rating">★★★★★ <span>4.9</span></div>
+          </div>
+          <h3 class="rcf-name">Sunrise Deluxe Room</h3>
+          <p class="rcf-desc">Wake to golden light over the Indian Ocean. Elegant teak furnishings, king bed, and a private balcony with unobstructed sea views.</p>
+          <div class="rcf-amenities">
+            <span class="amenity-tag">🛏 King Bed</span>
+            <span class="amenity-tag">🌊 Sea View</span>
+            <span class="amenity-tag">📶 Free WiFi</span>
+            <span class="amenity-tag">❄️ A/C</span>
+          </div>
+          <div class="rcf-footer">
+            <div class="rcf-price">
+              <span class="price-from">from</span>
+              <span class="price-num">$240</span>
+              <span class="price-per">/ night</span>
+            </div>
+            <a href="room-details.html?room=1" class="rcf-book-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 2 -->
+      <div class="room-card-full" data-category="suite" data-price="340">
+        <div class="rcf-img" style="position:relative; overflow:hidden;">
+          <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ocean Vista Suite" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+          <span class="rcf-badge popular">Popular</span>
+          <div class="rcf-overlay">
+            <a href="room-details.html?room=2" class="rcf-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="rcf-info">
+          <div class="rcf-meta">
+            <span class="rcf-type">Ocean Suite</span>
+            <div class="rcf-rating">★★★★★ <span>5.0</span></div>
+          </div>
+          <h3 class="rcf-name">Ocean Vista Suite</h3>
+          <p class="rcf-desc">Panoramic sea views from your private balcony with hand-crafted teak furnishings and a luxurious en-suite bathroom.</p>
+          <div class="rcf-amenities">
+            <span class="amenity-tag">🛏 King Bed</span>
+            <span class="amenity-tag">🌊 Ocean View</span>
+            <span class="amenity-tag">🛁 Jacuzzi</span>
+            <span class="amenity-tag">🍽 Minibar</span>
+          </div>
+          <div class="rcf-footer">
+            <div class="rcf-price">
+              <span class="price-from">from</span>
+              <span class="price-num">$340</span>
+              <span class="price-per">/ night</span>
+            </div>
+            <a href="room-details.html?room=2" class="rcf-book-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 3 -->
+      <div class="room-card-full" data-category="villa" data-price="520">
+        <div class="rcf-img" style="position:relative; overflow:hidden;">
+          <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Royal Garden Villa" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+          <span class="rcf-badge new">New</span>
+          <div class="rcf-overlay">
+            <a href="room-details.html?room=3" class="rcf-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="rcf-info">
+          <div class="rcf-meta">
+            <span class="rcf-type">Garden Villa</span>
+            <div class="rcf-rating">★★★★★ <span>4.8</span></div>
+          </div>
+          <h3 class="rcf-name">Royal Garden Villa</h3>
+          <p class="rcf-desc">A private garden oasis with plunge pool, outdoor shower, and tropical serenity. Surrounded by lush Sri Lankan flora.</p>
+          <div class="rcf-amenities">
+            <span class="amenity-tag">🏊 Plunge Pool</span>
+            <span class="amenity-tag">🌿 Garden</span>
+            <span class="amenity-tag">🚿 Outdoor Shower</span>
+            <span class="amenity-tag">🍳 Kitchenette</span>
+          </div>
+          <div class="rcf-footer">
+            <div class="rcf-price">
+              <span class="price-from">from</span>
+              <span class="price-num">$520</span>
+              <span class="price-per">/ night</span>
+            </div>
+            <a href="room-details.html?room=3" class="rcf-book-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 4 -->
+      <div class="room-card-full" data-category="suite" data-price="460">
+        <div class="rcf-img" style="position:relative; overflow:hidden;">
+          <img src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Heritage Colonial Suite" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+          <div class="rcf-overlay">
+            <a href="room-details.html?room=4" class="rcf-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="rcf-info">
+          <div class="rcf-meta">
+            <span class="rcf-type">Heritage Suite</span>
+            <div class="rcf-rating">★★★★★ <span>4.9</span></div>
+          </div>
+          <h3 class="rcf-name">Heritage Colonial Suite</h3>
+          <p class="rcf-desc">Inspired by Sri Lanka's colonial past — antique furnishings, four-poster bed, and intricate hand-carved woodwork throughout.</p>
+          <div class="rcf-amenities">
+            <span class="amenity-tag">🛏 Four-Poster</span>
+            <span class="amenity-tag">🏛 Heritage Decor</span>
+            <span class="amenity-tag">📚 Library</span>
+            <span class="amenity-tag">🍵 Butler Service</span>
+          </div>
+          <div class="rcf-footer">
+            <div class="rcf-price">
+              <span class="price-from">from</span>
+              <span class="price-num">$460</span>
+              <span class="price-per">/ night</span>
+            </div>
+            <a href="room-details.html?room=4" class="rcf-book-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 5 -->
+      <div class="room-card-full" data-category="villa" data-price="680">
+        <div class="rcf-img" style="position:relative; overflow:hidden;">
+          <img src="https://thumbs.dreamstime.com/b/luxurious-beachfront-villa-private-pool-palm-trees-ocean-views-tropical-paradise-aig-stunning-featuring-ultimate-326295214.jpg">
+          <span class="rcf-badge">Exclusive</span>
+          <div class="rcf-overlay">
+            <a href="room-details.html?room=5" class="rcf-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="rcf-info">
+          <div class="rcf-meta">
+            <span class="rcf-type">Beachfront Villa</span>
+            <div class="rcf-rating">★★★★★ <span>5.0</span></div>
+          </div>
+          <h3 class="rcf-name">Beachfront Paradise Villa</h3>
+          <p class="rcf-desc">Step directly onto the beach from your private terrace. Two bedrooms, a private pool, and dedicated butler service.</p>
+          <div class="rcf-amenities">
+            <span class="amenity-tag">🏖 Beach Access</span>
+            <span class="amenity-tag">🏊 Private Pool</span>
+            <span class="amenity-tag">🛏 2 Bedrooms</span>
+            <span class="amenity-tag">🍽 Private Chef</span>
+          </div>
+          <div class="rcf-footer">
+            <div class="rcf-price">
+              <span class="price-from">from</span>
+              <span class="price-num">$680</span>
+              <span class="price-per">/ night</span>
+            </div>
+            <a href="room-details.html?room=5" class="rcf-book-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 6 -->
+      <div class="room-card-full" data-category="penthouse" data-price="980">
+        <div class="rcf-img" style="position:relative; overflow:hidden;">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.ZgTB2JbVgKNrtNZ8bJt2cwHaFj?cb=thfvnextfalcon&rs=1&pid=ImgDetMain&o=7&rm=3">
+          <span class="rcf-badge exclusive">Exclusive</span>
+          <div class="rcf-overlay">
+            <a href="room-details.html?room=6" class="rcf-view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="rcf-info">
+          <div class="rcf-meta">
+            <span class="rcf-type">Penthouse</span>
+            <div class="rcf-rating">★★★★★ <span>5.0</span></div>
+          </div>
+          <h3 class="rcf-name">Presidential Penthouse</h3>
+          <p class="rcf-desc">The pinnacle of luxury — two floors, rooftop terrace, butler service included, and a 360° panoramic view of the Indian Ocean.</p>
+          <div class="rcf-amenities">
+            <span class="amenity-tag">🏙 360° Views</span>
+            <span class="amenity-tag">🛁 Infinity Bath</span>
+            <span class="amenity-tag">🍾 Butler</span>
+            <span class="amenity-tag">🚁 Helipad Access</span>
+          </div>
+          <div class="rcf-footer">
+            <div class="rcf-price">
+              <span class="price-from">from</span>
+              <span class="price-num">$980</span>
+              <span class="price-per">/ night</span>
+            </div>
+            <a href="room-details.html?room=6" class="rcf-book-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rooms-grid-full -->
+
+    <!-- No results -->
+    <div class="no-results" id="noResults" style="display:none">
+      <span>🔍</span>
+      <p>No rooms match your filter. <button onclick="setFilter(document.querySelector('[data-filter=all]'),'all')">Show all rooms</button></p>
+    </div>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/rooms.js"></script>
+</body>
+</html>

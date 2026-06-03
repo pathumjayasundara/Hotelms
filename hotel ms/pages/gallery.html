@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Serendib Grand Hotel</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/gallery.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder" data-base="../"></div>
+
+  <!-- HERO -->
+  <div class="page-hero gallery-hero">
+    <span class="page-hero-tag">Visual Journey</span>
+    <h1 class="page-hero-title">Our<br><em>Gallery</em></h1>
+    <p class="page-hero-sub">
+      A window into the world of Serendib Grand — where every corner is a photograph waiting to be taken.
+    </p>
+  </div>
+
+  <!-- GALLERY FILTER -->
+  <div class="gallery-filter-wrap">
+    <div class="gallery-filter">
+      <button class="gf-btn active" data-cat="all" onclick="filterGallery(this,'all')">All</button>
+      <button class="gf-btn" data-cat="rooms" onclick="filterGallery(this,'rooms')">Rooms</button>
+      <button class="gf-btn" data-cat="dining" onclick="filterGallery(this,'dining')">Dining</button>
+      <button class="gf-btn" data-cat="pool" onclick="filterGallery(this,'pool')">Pool & Spa</button>
+      <button class="gf-btn" data-cat="beach" onclick="filterGallery(this,'beach')">Beach</button>
+      <button class="gf-btn" data-cat="events" onclick="filterGallery(this,'events')">Events</button>
+    </div>
+  </div>
+
+  <!-- MASONRY GALLERY GRID -->
+  <div class="gallery-grid" id="galleryGrid">
+
+    <!-- Row 1 -->
+    <div class="g-item large" data-cat="rooms" onclick="openLightbox(0)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ocean Vista Suite" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Ocean Vista Suite</div>
+    </div>
+    <div class="g-item" data-cat="pool" onclick="openLightbox(1)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Infinity Pool" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Infinity Pool</div>
+    </div>
+    <div class="g-item" data-cat="beach" onclick="openLightbox(2)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bentota Beach" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Bentota Beach</div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="g-item" data-cat="dining" onclick="openLightbox(3)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gourmet Restaurant" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Gourmet Restaurant</div>
+    </div>
+    <div class="g-item tall" data-cat="rooms" onclick="openLightbox(4)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Royal Garden Villa" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Royal Garden Villa</div>
+    </div>
+    <div class="g-item" data-cat="pool" onclick="openLightbox(5)">
+      <div class="g-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjirifB2PS-hKHfaWJrAcwCWm2qxGshMJs5IPouHQT6QclVr13X2eV8t1Db71gM_NN-_U5ZiwbZlJWlJjU-S_5mRwMXgopou2BJIKtLfnLQSivhRACi4IGjOAzQrnfqzL3AWgrIYyShwryjk7cizZzRh_iTdT2XTTbcgCj7zNp1hFyHwANOTldeR4fb/w1200-h630-p-k-no-nu/Ayurveda%20in%20Dubai%20shirodhara.jpeg"></div>
+      <div class="g-caption">Ayurvedic Spa</div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="g-item" data-cat="beach" onclick="openLightbox(6)">
+      <div class="g-img"><img src="https://tse4.mm.bing.net/th/id/OIP.24ZpmD8nqohMYaB7Ws662AHaEO?cb=thfvnextfalcon&rs=1&pid=ImgDetMain&o=7&rm=3"></div>
+      <div class="g-caption">Sunset Terrace</div>
+    </div>
+    <div class="g-item" data-cat="events" onclick="openLightbox(7)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beach Wedding" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Beach Wedding</div>
+    </div>
+    <div class="g-item large" data-cat="rooms" onclick="openLightbox(8)">
+      <div class="g-img"><img src="https://th.bing.com/th/id/R.00b30308137f200eef084b5508b44816?rik=NCaHm9R006cY%2bA&pid=ImgRaw&r=0"></div>
+      <div class="g-caption">Presidential Penthouse</div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="g-item" data-cat="dining" onclick="openLightbox(9)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wine Cellar Bar" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Wine Cellar Bar</div>
+    </div>
+    <div class="g-item" data-cat="beach" onclick="openLightbox(10)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/1252500/pexels-photo-1252500.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Water Activities" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Water Activities</div>
+    </div>
+    <div class="g-item" data-cat="events" onclick="openLightbox(11)">
+      <div class="g-img"><img src="https://tse4.mm.bing.net/th/id/OIP.EnKL3Sbd7QBeG9uyppZrvwHaE7?cb=thfvnextfalcon&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Grand Ballroom" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Grand Ballroom</div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="g-item" data-cat="pool" onclick="openLightbox(12)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/2997811/pexels-photo-2997811.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wellness Centre" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Wellness Centre</div>
+    </div>
+    <div class="g-item tall" data-cat="rooms" onclick="openLightbox(13)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Heritage Suite Bedroom" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Heritage Suite Bedroom</div>
+    </div>
+    <div class="g-item" data-cat="dining" onclick="openLightbox(14)">
+      <div class="g-img"><img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sri Lankan Cuisine" style="width:100%; height:100%; object-fit:cover"></div>
+      <div class="g-caption">Sri Lankan Cuisine</div>
+    </div>
+
+  </div><!-- /gallery-grid -->
+
+  <!-- LIGHTBOX (unchanged JS, still shows emoji) -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lb-close" onclick="closeLightbox()">&times;</button>
+      <button class="lb-arrow lb-prev" onclick="lbMove(-1,event)">&#8592;</button>
+      <button class="lb-arrow lb-next" onclick="lbMove(1,event)">&#8594;</button>
+
+      <div class="lb-slide" id="lbSlide">
+        <div class="lb-img" id="lbImg"><span id="lbEmoji">🌊</span></div>
+        <div class="lb-info">
+          <p class="lb-caption" id="lbCaption">Ocean Vista Suite</p>
+          <p class="lb-counter" id="lbCounter">1 / 15</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/gallery.js"></script>
+</body>
+</html>

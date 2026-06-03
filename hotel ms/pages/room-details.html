@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room Details — Serendib Grand Hotel</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/room-details.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder" data-base="../"></div>
+
+  <div class="rd-wrap" id="rdWrap">
+
+    <!-- IMAGE SLIDER -->
+    <div class="rd-slider" id="rdSlider">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide"><img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ocean view" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="slide"><img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Bedroom" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="slide"><img src="https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Bathroom" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="slide"><img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sunset balcony" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="slide"><img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Garden view" style="width:100%; height:100%; object-fit:cover;"></div>
+      </div>
+
+      <!-- Arrows -->
+      <button class="slider-arrow prev" id="sliderPrev" onclick="slideMove(-1)">&#8592;</button>
+      <button class="slider-arrow next" id="sliderNext" onclick="slideMove(1)">&#8594;</button>
+
+      <!-- Dots -->
+      <div class="slider-dots" id="sliderDots"></div>
+
+      <!-- Counter -->
+      <div class="slider-counter" id="sliderCounter">1 / 5</div>
+
+      <!-- Thumbnails -->
+      <div class="slider-thumbs" id="sliderThumbs">
+        <div class="thumb active" onclick="goToSlide(0)"><img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=100" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div class="thumb" onclick="goToSlide(1)"><img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=100" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div class="thumb" onclick="goToSlide(2)"><img src="https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=100" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div class="thumb" onclick="goToSlide(3)"><img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=100" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div class="thumb" onclick="goToSlide(4)"><img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=100" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+      </div>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="rd-breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <a href="rooms.html">Rooms</a>
+      <span>›</span>
+      <span id="breadcrumbName">Ocean Vista Suite</span>
+    </div>
+
+    <!-- CONTENT (unchanged except the slider images) -->
+    <div class="rd-content">
+      <!-- LEFT: Details (same as original) -->
+      <div class="rd-left">
+        <div class="rd-header">
+          <span class="rd-type" id="rdType">Ocean Suite</span>
+          <div class="rd-rating">★★★★★ <span>5.0 (148 reviews)</span></div>
+        </div>
+        <h1 class="rd-title" id="rdTitle">Ocean Vista Suite</h1>
+
+        <div class="rd-stats">
+          <div class="rd-stat">
+            <span class="rd-stat-icon">📐</span>
+            <span class="rd-stat-val" id="rdSize">65 m²</span>
+            <span class="rd-stat-lbl">Room Size</span>
+          </div>
+          <div class="rd-stat">
+            <span class="rd-stat-icon">👥</span>
+            <span class="rd-stat-val" id="rdGuests">2 Adults</span>
+            <span class="rd-stat-lbl">Max Guests</span>
+          </div>
+          <div class="rd-stat">
+            <span class="rd-stat-icon">🛏</span>
+            <span class="rd-stat-val" id="rdBed">King Bed</span>
+            <span class="rd-stat-lbl">Bed Type</span>
+          </div>
+          <div class="rd-stat">
+            <span class="rd-stat-icon">🌊</span>
+            <span class="rd-stat-val" id="rdView">Ocean</span>
+            <span class="rd-stat-lbl">View</span>
+          </div>
+        </div>
+
+        <div class="rd-section">
+          <h2 class="rd-section-title">About This Room</h2>
+          <p class="rd-desc" id="rdDesc">
+            The Ocean Vista Suite offers panoramic sea views from your private balcony with hand-crafted teak furnishings.
+            Spanning 65 square metres, this suite is a sanctuary of refined comfort where every detail has been
+            thoughtfully curated. The spacious en-suite bathroom features a deep-soak tub and rain shower with
+            premium bath amenities sourced from local artisans.
+          </p>
+          <p class="rd-desc">
+            Wake each morning to the gentle sound of the Indian Ocean and retire each evening beneath 400-thread-count
+            Egyptian cotton sheets. The private balcony is furnished with plush seating — perfect for sundowners as the
+            sun melts into the horizon.
+          </p>
+        </div>
+
+        <div class="rd-section">
+          <h2 class="rd-section-title">Room Amenities</h2>
+          <div class="rd-amenities-grid">
+            <div class="rd-amenity"><span>📶</span> High-Speed WiFi</div>
+            <div class="rd-amenity"><span>❄️</span> Air Conditioning</div>
+            <div class="rd-amenity"><span>📺</span> 55" Smart TV</div>
+            <div class="rd-amenity"><span>🛁</span> Deep-Soak Bath</div>
+            <div class="rd-amenity"><span>🚿</span> Rain Shower</div>
+            <div class="rd-amenity"><span>🍷</span> Minibar</div>
+            <div class="rd-amenity"><span>☕</span> Coffee Machine</div>
+            <div class="rd-amenity"><span>🧴</span> Organic Toiletries</div>
+            <div class="rd-amenity"><span>🔒</span> In-Room Safe</div>
+            <div class="rd-amenity"><span>👕</span> Wardrobe & Iron</div>
+            <div class="rd-amenity"><span>🌅</span> Private Balcony</div>
+            <div class="rd-amenity"><span>🍳</span> Room Service 24/7</div>
+          </div>
+        </div>
+
+        <div class="rd-section">
+          <h2 class="rd-section-title">Policies</h2>
+          <div class="rd-policies">
+            <div class="policy-item">
+              <span class="policy-icon">🕐</span>
+              <div>
+                <div class="policy-label">Check-in / Check-out</div>
+                <div class="policy-val">From 2:00 PM / Until 12:00 PM</div>
+              </div>
+            </div>
+            <div class="policy-item">
+              <span class="policy-icon">❌</span>
+              <div>
+                <div class="policy-label">Cancellation</div>
+                <div class="policy-val">Free cancellation up to 48 hours before arrival</div>
+              </div>
+            </div>
+            <div class="policy-item">
+              <span class="policy-icon">🍳</span>
+              <div>
+                <div class="policy-label">Breakfast</div>
+                <div class="policy-val">Complimentary full breakfast included</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rd-section">
+          <h2 class="rd-section-title">Guest Reviews</h2>
+          <div class="reviews-list">
+            <div class="review-card">
+              <div class="review-top">
+                <div class="review-avatar">👩</div>
+                <div>
+                  <div class="review-name">Amelia Richardson</div>
+                  <div class="review-loc">London, UK · June 2025</div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <p class="review-text">Absolutely stunning suite. Woke up to the most beautiful sunrise over the ocean. The staff were incredibly attentive and the bed was the most comfortable I've ever slept in.</p>
+            </div>
+            <div class="review-card">
+              <div class="review-top">
+                <div class="review-avatar">👨</div>
+                <div>
+                  <div class="review-name">Hiroshi Tanaka</div>
+                  <div class="review-loc">Tokyo, Japan · May 2025</div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <p class="review-text">The view from the balcony is something else entirely. We spent hours just sitting there watching the ocean. Serendib Grand exceeded every expectation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Booking Panel (unchanged) -->
+      <div class="rd-right">
+        <div class="booking-panel">
+          <div class="bp-price">
+            <span class="bp-price-num" id="bpPrice">$340</span>
+            <span class="bp-price-per">/ night</span>
+          </div>
+          <div class="bp-rating">★★★★★ · 148 reviews</div>
+
+          <div class="bp-form">
+            <div class="bp-row">
+              <div class="bp-field">
+                <label class="bp-label">Check-In</label>
+                <input type="date" class="bp-input" id="bpCheckin" />
+              </div>
+              <div class="bp-field">
+                <label class="bp-label">Check-Out</label>
+                <input type="date" class="bp-input" id="bpCheckout" />
+              </div>
+            </div>
+            <div class="bp-field">
+              <label class="bp-label">Guests</label>
+              <select class="bp-input" id="bpGuests">
+                <option>1 Guest</option>
+                <option selected>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+              </select>
+            </div>
+
+            <div class="bp-summary" id="bpSummary" style="display:none">
+              <div class="bp-sum-row"><span id="bpNightsLabel">3 nights × $340</span><span id="bpSubtotal">$1,020</span></div>
+              <div class="bp-sum-row"><span>Taxes & Fees (12%)</span><span id="bpTax">$122</span></div>
+              <div class="bp-sum-row total"><span>Total</span><span id="bpTotal">$1,142</span></div>
+            </div>
+
+            <button class="bp-reserve-btn" onclick="calculateStay()">Reserve Now</button>
+            <p class="bp-note">You won't be charged yet</p>
+          </div>
+
+          <div class="bp-includes">
+            <div class="bp-include">✓ Free cancellation (48hrs)</div>
+            <div class="bp-include">✓ Breakfast included</div>
+            <div class="bp-include">✓ Airport transfer</div>
+          </div>
+        </div>
+
+        <div class="similar-section">
+          <h3 class="similar-title">Similar Rooms</h3>
+          <a href="room-details.html?room=3" class="similar-card">
+            <div class="similar-img" style="background:linear-gradient(135deg,#1a2a1a,#0f1f0f)"><span>🌿</span></div>
+            <div class="similar-info">
+              <div class="similar-name">Royal Garden Villa</div>
+              <div class="similar-price">from $520 / night</div>
+            </div>
+          </a>
+          <a href="room-details.html?room=6" class="similar-card">
+            <div class="similar-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0f05)"><span>👑</span></div>
+            <div class="similar-info">
+              <div class="similar-name">Presidential Penthouse</div>
+              <div class="similar-price">from $980 / night</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div><!-- /rd-content -->
+  </div><!-- /rd-wrap -->
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/room-details.js"></script>
+</body>
+</html>
